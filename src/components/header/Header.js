@@ -17,9 +17,9 @@ return(
     </a>
   </li>
   <li className="main-section__item">
-    <a href="#" className="main-section__link">
-    ZOOOV
-    </a>
+    <Link to='/sets' className="main-section__link">
+    наборы ZOOOV
+    </Link>
   </li>
   <li className="main-section__item">
     <a href="#" className="main-section__link">
