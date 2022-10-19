@@ -1,7 +1,7 @@
 import './setsZoov.scss';
-import dog1 from '../../image/dog1.png';
 import { useState, useEffect } from 'react';
 import { useHttp } from '../../hooks/http.hook';
+import SetZoovCard from '../setZoovCard/SetZoovCard';
 
 const SetsZoov = () => {
 
@@ -25,30 +25,11 @@ useEffect(() =>{
       </div>
 
       <div className="sets__bigwrap">
-        <div className="sets__cardwrap">
-
-          <div className="sets__img">
-            <div className="sets__imgtext">Для собак до 10кг</div>
-            <img src={dog1} alt="dog1" />
-          </div>
-
-          <div className="sets__set">Набор M</div>
-
-          <div className="sets__num">
-            4 шт. – баранина/кролик <br />
-            3 шт. – говядина/индейка
-          </div>
-
-          <div className="sets__weight">Вес каждой упаковки – 300г</div>
-
-          <div className="sets__pricewrap">
-            <div className="sets__oldprice">2 423.</div>
-            <div className="sets__newprice">1 680.</div>
-          </div>
-
-          <div className="sets__button">Заказать</div>
-
-          </div>
+        {
+          data.map(({title, set, meats, weight, oldprice, newprice, id, picture}) => {
+            return <SetZoovCard key={id} title = {title} set = {set} meats = {meats} weight = {weight} oldprice = {oldprice} newprice = {newprice} picture={picture}/>
+          })
+        }
       </div>
     </div>
   </section>
