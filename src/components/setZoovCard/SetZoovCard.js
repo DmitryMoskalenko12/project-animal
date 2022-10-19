@@ -1,7 +1,5 @@
-import dog1 from '../../image/dog1.png';
-import dog3 from '../../image/dog3.png';
 
-const SetZoovCard = ({title, set, meats, weight, oldprice, newprice, picture}) => {
+const SetZoovCard = ({title, set, meats, weight, oldprice, newprice, picture, setModal}) => {
 
 return(
   <>
@@ -26,7 +24,7 @@ return(
   <div className="sets__newprice">{newprice}</div>
 </div>
 
-<div className="sets__button">Заказать</div>
+<button onClick={() => setModal(true)} className="sets__button">Заказать</button>
 
 </div>
   </>

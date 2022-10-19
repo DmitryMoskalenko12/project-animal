@@ -1,6 +1,5 @@
 .sets{
   min-height: 825px;
-  padding-top: 83px;
   background: #FFF4F3;
   &__titlewrap{
     display: grid;
@@ -103,5 +102,59 @@
     padding-top: 8px;
     margin-top: 23px;
     cursor: pointer;
+  }
+  &__calc{
+    background: #EAD1D0;
+  }
+  &__calctext{
+    font-weight: 500;
+    font-size: 23px;
+    color: #000000;
+    width: 232px;
+    height: 160px;
+    margin: 0 auto;
+    margin-top: 25px;
+  }
+  &__calcbutton{
+    display: block;
+    width: 171px;
+    height: 48px;
+    background: #961914;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    color: #FFFFFF;
+    cursor: pointer;
+    border: none;
+    margin: 0 auto;
+    margin-top: 42px;
+  }
+  &__applemeatwrap{
+    position: relative;
+  }
+  &__applewrap{
+    position: absolute;
+    width: 119px;
+    height: 119px;
+    top: 65px;
+    left: 5px;
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__meatwrap{
+    position: absolute;
+    width: 149px;
+    height: 149px;
+    top: 93px;
+    left: 123px;
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 }
