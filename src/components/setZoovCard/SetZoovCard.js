@@ -1,5 +1,5 @@
 
-const SetZoovCard = ({title, set, meats, weight, oldprice, newprice, picture, setModal}) => {
+const SetZoovCard = ({title, set, meats, weight, oldprice, newprice, picture, setModal, id, setButId}) => {
 
 return(
   <>
@@ -24,7 +24,9 @@ return(
   <div className="sets__newprice">{newprice}</div>
 </div>
 
-<button onClick={() => setModal(true)} className="sets__button">Заказать</button>
+<button data-number = {id} onClick={(e) => {
+  setModal(true)
+  setButId(e.currentTarget.getAttribute('data-number'))  }} className="sets__button">Заказать</button>
 
 </div>
   </>

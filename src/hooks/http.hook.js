@@ -18,5 +18,11 @@ const request = useCallback(async (url, method = 'GET', body = null, headers = {
 
 }, [])
 
-return {request}
+const post = useCallback(async (url, data, method='POST', headers = {'Content-Type': 'application/json'}, body = null)=>{
+  const res = await fetch(url, {method, headers, body: data })
+   return await res.json()
+  },[])
+  
+  return {request, post};
+
 }

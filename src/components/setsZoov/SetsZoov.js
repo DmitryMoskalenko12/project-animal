@@ -6,19 +6,24 @@ import apple from '../../image/apple.png';
 import redmeat from '../../image/redmeat.png';
 import { Link } from 'react-router-dom';
 import Modal from '../modal/Modal';
+
 const SetsZoov = () => {
 
 const [data, setData] = useState([]);
 const [modal, setModal] = useState(false);
-
+const [butid, setButId] = useState(null)
 const {request} = useHttp();
 
 useEffect(() =>{
+  getInfoModal()
+  //eslint-disable-next-line
+},[])
+
+const getInfoModal = () =>{
   request('http://localhost:3001/sectionCard1')
   .then(res => setData(res))
   .catch(console.log('error'))
-  //eslint-disable-next-line
-},[])
+}
 
   return(
   <section className="sets">
@@ -33,14 +38,17 @@ useEffect(() =>{
       <div className="sets__bigwrap">
         {
           data.map(({title, set, meats, weight, oldprice, newprice, id, picture}) => {
-            return <SetZoovCard modal = {modal} setModal = {setModal} key={id} title = {title} set = {set} meats = {meats} weight = {weight} oldprice = {oldprice} newprice = {newprice} picture={picture}/>
+            return <SetZoovCard setButId = {setButId} modal = {modal} setModal = {setModal} key={id} title = {title} set = {set} meats = {meats} weight = {weight} oldprice = {oldprice} newprice = {newprice} picture={picture} id = {id}/>
           })
 
         }
-        {
-          modal ? <Modal  modal = {modal} setModal = {setModal}/>: null
-        }
 
+
+        {
+            modal ? <Modal data = {data} butId = {butid}  modal = {modal} setModal = {setModal}/> : null
+ 
+        }
+        
         <div className="sets__calc">
           <div className="sets__calctext">
           Рассчитаем в каком количестве нужно кормить вашего хвостика рационами Zooov
