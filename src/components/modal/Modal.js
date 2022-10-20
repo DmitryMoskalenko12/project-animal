@@ -38,16 +38,16 @@ return(
 
           <div className="modal__butwrap1">
              <button className='modal__butrabbit'>Баранина/Кролик</button>
-          <div className="modal__weight1">4 шт</div>
+             <div className="modal__weight1">4 шт</div>
           </div>
 
            <div className="modal__butwrap2">
               <button className='modal__butcow'>Говядина/Индейка</button>
-           <div className="modal__weight2">3 шт</div>
+              <div className="modal__weight2">3 шт</div>
            </div>
           
 
-           <form onSubmit={(e) => {postData(); e.preventDefault();}} className='modal__form'>
+           <form onSubmit={(e) => {postData(); e.preventDefault()}} className='modal__form'>
             <input value={name} onChange={(e) => setName(e.target.value)} className='modal__name' type="text" name='name' required placeholder='Name' />
             <input value={email} onChange={(e) => setEmail(e.target.value)} className='modal__email' type="number" name='phone' required placeholder='Email'/>
             <input value={tel} onChange={(e) => setTel(e.target.value)} className='modal__tel' type="email" name='email' required placeholder='Tel'/>
