@@ -26,15 +26,15 @@ return(
 
       <div className="modal__contentwrap">
         <div className="modal__imgwrap">
-          <img src={props.data[props.butId - 1].picture} alt={props.title} />
+          <img src={props.data[props.butId - 1].picture} alt={props.data[props.butId - 1].title} />
         </div>
 
         <div className="modal__contentbigwrap">
           <div className="modal__modaltitle">
-          Набор М
+          {props.data[props.butId - 1].set}
           </div>
 
-          <div className="modal__modalweight">Вес каждой упаковки – 300г</div>
+          <div className="modal__modalweight">{props.data[props.butId - 1].weight}</div>
 
           <div className="modal__butwrap1">
              <button className='modal__butrabbit'>Баранина/Кролик</button>
@@ -49,19 +49,19 @@ return(
 
            <form onSubmit={(e) => {postData(); e.preventDefault()}} className='modal__form'>
             <input value={name} onChange={(e) => setName(e.target.value)} className='modal__name' type="text" name='name' required placeholder='Name' />
-            <input value={email} onChange={(e) => setEmail(e.target.value)} className='modal__email' type="number" name='phone' required placeholder='Email'/>
-            <input value={tel} onChange={(e) => setTel(e.target.value)} className='modal__tel' type="email" name='email' required placeholder='Tel'/>
+            <input value={tel} onChange={(e) => setTel(e.target.value)} className='modal__tel' type="number" name='phone' required placeholder='Tel'/>
+            <input value={email} onChange={(e) => setEmail(e.target.value)} className='modal__email' type="email" name='email' required placeholder='Email'/>
 
             <div className="modal__checkboxwrap">
-            <input type="checkbox" name="checkbox" />
-            <div className="modal__checkdescr">
+            <input type="checkbox" required name="checkbox" id='modal__checkbox'/>
+            <label htmlFor='modal__checkbox' className="modal__checkdescr">
             Даю согласие на обработку персональных данных
-            </div>
+            </label>
           </div>
           <div className="modal__butandprice">
             <div className="modal__pricewrap">
-              <div className="modal__oldprice">2 423.</div>
-              <div className="modal__newprice">1 680.</div>
+              <div className="modal__oldprice">{props.data[props.butId - 1].oldprice}</div>
+              <div className="modal__newprice">{props.data[props.butId - 1].newprice}</div>
             </div>
           <button className='modal__button'>Відправити</button>
           </div>
