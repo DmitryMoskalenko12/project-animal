@@ -29,6 +29,7 @@ return(
 
       <div className="modal__contentwrap">
         <div className="modal__imgwrap">
+          <div className="modal__imgtext">{props.data[props.butId - 1].title}</div>
           <img src={props.data[props.butId - 1].picture} alt={props.data[props.butId - 1].title} />
         </div>
 

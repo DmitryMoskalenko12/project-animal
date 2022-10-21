@@ -18,6 +18,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); 
+    overflow-y: scroll;
   }
  
   &__close{
@@ -39,6 +40,7 @@
     margin-top: 56px;
   }
   &__imgwrap{
+    position: relative;
     width: 351px;
     height: 468px;
     img{
@@ -223,6 +225,21 @@ opacity: 0;
     font-weight: 400;
     font-size: 9px;
     color: #434242;
+  }
+  &__imgtext{
+    position: absolute;
+    width: 137px;
+    height: 29px;
+    background: #FFF4F3;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 12px;
+    text-align: center;
+    color: #EC7973;
+    left: 200px;
+    top: 12px;
+    text-align: center;
+    padding-top: 5px;
   }
 }
 
