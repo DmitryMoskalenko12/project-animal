@@ -37,6 +37,58 @@
       "email": "dmtrmsklnk@gmail.com",
       "tel": "380996117693",
       "id": 1
+    },
+    {
+      "name": "ssrgergh",
+      "email": "dmtrmsklnk@gmail.com",
+      "tel": "380996117693",
+      "checkbox": "on",
+      "id": 2
+    },
+    {
+      "name": "ssrgergh",
+      "email": "dima.oksagen12@gmail.com",
+      "tel": "380996117693",
+      "checkbox": "on",
+      "id": 3
+    },
+    {
+      "name": "Дмитрий",
+      "email": "dima.oksagen12@gmail.com",
+      "tel": "380996117693",
+      "checkbox": "on",
+      "set": "Набор L",
+      "id": 4
+    },
+    {
+      "name": "Дмитрий",
+      "email": "dima.oksagen12@gmail.com",
+      "tel": "380996117693",
+      "checkbox": "on",
+      "set": "Набор XL",
+      "oldPrice": "5 437.",
+      "newPrice": "3 810.",
+      "id": 5
+    },
+    {
+      "name": "ssrgergh",
+      "email": "dmtrmsklnk@gmail.com",
+      "tel": "380996117693",
+      "checkbox": "on",
+      "set": "Набор XL",
+      "oldPrice": "5 437.",
+      "newPrice": "3 810.",
+      "id": 6
+    },
+    {
+      "name": "Дмитрий",
+      "email": "dmtrmsklnk@gmail.com",
+      "tel": "380996117693",
+      "checkbox": "on",
+      "set": "Набор XL",
+      "oldPrice": "5 437.",
+      "newPrice": "3 810.",
+      "id": 7
     }
   ]
 }

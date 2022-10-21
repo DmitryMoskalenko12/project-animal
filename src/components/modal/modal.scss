@@ -206,61 +206,24 @@ opacity: 0;
     background: transparent;
     border-radius: 8px;
   }
-/*   &__title{
+  &__akkordion1{
+    display: none;
     font-weight: 400;
-    font-size: 24px;
-    color: #000000;
-    text-align: center;
-    margin-top: 20px;
+    font-size: 9px;
+    color: #434242;
   }
-  &__form{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+  .akkord1{
+    display: flex
   }
-  &__name{
-    margin-top: 30px;
-    width: 200px;
-    height: 30px;
-    background: #FFFFFF;
-    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
-    border-radius: 4px;
-    border: none;
-    padding: 10px 0 10px 10px;
+  .akkord2{
+    display: flex
   }
-  &__email{
-    margin-top: 30px;
-    width: 200px;
-    height: 30px;
-    background: #FFFFFF;
-    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
-    border-radius: 4px;
-    border: none;
-    padding: 10px 0 10px 10px;
+  &__akkordion2{
+    display: none;
+    font-weight: 400;
+    font-size: 9px;
+    color: #434242;
   }
-  &__tel{
-    margin-top: 30px;
-    width: 200px;
-    height: 30px;
-    background: #FFFFFF;
-    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
-    border-radius: 4px;
-    border: none;
-    padding: 10px 0 10px 10px;
-  }
-  &__button{
-      display: block;
-      width: 120px;
-      height: 30px;
-      border: 1px solid #FFFFFF;
-      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-      border-radius: 3px;
-      margin: 0 auto;
-      margin-top: 40px;
-      cursor: pointer;
-  } */
-
 }
 
 .modal.active{

@@ -8,12 +8,15 @@ const {post} = useHttp();
 const [name, setName] = useState('');
 const [email, setEmail] = useState('');
 const [tel, setTel] = useState('');
+const [check, setCheck] = useState(null);
+const [akkordion1, setAkkordion1] = useState(false);
+const [akkordion2, setAkkordion2] = useState(false);
 
 const postData = () =>{
-  const formData = {name: name, email: email, tel: tel}
+  const formData = {name: name, email: email, tel: tel, checkbox: check, set: props.data[props.butId - 1].set, oldPrice: props.data[props.butId - 1].oldprice, newPrice: props.data[props.butId - 1].newprice }
   const json = JSON.stringify(formData);
   post('http://localhost:3001/post', json)
-  .then(() => setName(''), setEmail(''), setTel(''), setTimeout(()=>{props.setModal(false)}, 2000) )
+  .then(() => setName(''), setEmail(''), setTel(''), setCheck(false), setTimeout(()=>{props.setModal(false)}, 2000) )
 }
 
 return(
@@ -36,15 +39,28 @@ return(
 
           <div className="modal__modalweight">{props.data[props.butId - 1].weight}</div>
 
-          <div className="modal__butwrap1">
+          <div className="modal__butwrap1" onClick={(e) => setAkkordion1( e.target.classList.toggle('akkord1'))}>
              <button className='modal__butrabbit'>Баранина/Кролик</button>
              <div className="modal__weight1">4 шт</div>
           </div>
-
-           <div className="modal__butwrap2">
+          <div className="modal__akkordion1"  style={{display: akkordion1 ? 'block' : 'none'}}>
+              Состав: Мякоть баранины (46,5%), мясо кролика (23,5%), кости
+              кролика (10%), печень баранины (5%), почки бараньи (2,5%),
+              рубец бараний (2,5%), кабачок (3%), брокколи (3%), семена
+              конопли (2%), шпинат (1%), яблоко (1%), льняное масло,
+              конопляное масло.
+          </div>
+           <div className="modal__butwrap2" onClick={(e) => setAkkordion2( e.target.classList.toggle('akkord2'))}>
               <button className='modal__butcow'>Говядина/Индейка</button>
               <div className="modal__weight2">3 шт</div>
            </div>
+           <div className="modal__akkordion2" style={{display: akkordion2 ? 'block' : 'none'}}>
+              Состав: Мякоть баранины (46,5%), мясо кролика (23,5%), кости
+              кролика (10%), печень баранины (5%), почки бараньи (2,5%),
+              рубец бараний (2,5%), кабачок (3%), брокколи (3%), семена
+              конопли (2%), шпинат (1%), яблоко (1%), льняное масло,
+              конопляное масло.
+              </div>
           
 
            <form onSubmit={(e) => {postData(); e.preventDefault()}} className='modal__form'>
@@ -53,7 +69,7 @@ return(
             <input value={email} onChange={(e) => setEmail(e.target.value)} className='modal__email' type="email" name='email' required placeholder='Email'/>
 
             <div className="modal__checkboxwrap">
-            <input type="checkbox" required name="checkbox" id='modal__checkbox'/>
+            <input onChange={(e)=> setCheck(e.target.value)} type="checkbox" required name="checkbox" id='modal__checkbox'/>
             <label htmlFor='modal__checkbox' className="modal__checkdescr">
             Даю согласие на обработку персональных данных
             </label>
