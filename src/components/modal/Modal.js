@@ -94,3 +94,5 @@ return(
 )
 }
 export default Modal;
+
+
