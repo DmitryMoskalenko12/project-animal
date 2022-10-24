@@ -12,8 +12,13 @@ const [check, setCheck] = useState(null);
 const [akkordion1, setAkkordion1] = useState(false);
 const [akkordion2, setAkkordion2] = useState(false);
 
+const set = props.data[props.butId - 1].set,
+      oldPrice = props.data[props.butId - 1].oldprice,
+      newPrice = props.data[props.butId - 1].newprice;
+
 const postData = () =>{
-  const formData = {name: name, email: email, tel: tel, checkbox: check, set: props.data[props.butId - 1].set, oldPrice: props.data[props.butId - 1].oldprice, newPrice: props.data[props.butId - 1].newprice }
+
+  const formData = {name: name, email: email, tel: tel, checkbox: check, set, oldPrice, newPrice}
   const json = JSON.stringify(formData);
   post('http://localhost:3001/post', json)
   .then(() => setName(''), setEmail(''), setTel(''), setCheck(false), setTimeout(()=>{props.setModal(false)}, 2000) )
@@ -25,8 +30,6 @@ return(
 
       <div onClick={() => props.setModal(false)} className="modal__close">&times;</div>
 
-      
-
       <div className="modal__contentwrap">
         <div className="modal__imgwrap">
           <div className="modal__imgtext">{props.data[props.butId - 1].title}</div>
@@ -35,12 +38,12 @@ return(
 
         <div className="modal__contentbigwrap">
           <div className="modal__modaltitle">
-          {props.data[props.butId - 1].set}
+          {set}
           </div>
 
           <div className="modal__modalweight">{props.data[props.butId - 1].weight}</div>
 
-          <div className="modal__butwrap1" onClick={(e) => setAkkordion1( e.target.classList.toggle('akkord1'))}>
+          <div className="modal__butwrap1" onClick={() => setAkkordion1( akkordion1 => !akkordion1)}>
              <button className='modal__butrabbit'>Баранина/Кролик</button>
              <div className="modal__weight1">4 шт</div>
           </div>
@@ -51,7 +54,7 @@ return(
               конопли (2%), шпинат (1%), яблоко (1%), льняное масло,
               конопляное масло.
           </div>
-           <div className="modal__butwrap2" onClick={(e) => setAkkordion2( e.target.classList.toggle('akkord2'))}>
+           <div className="modal__butwrap2" onClick={() => setAkkordion2(akkordion2 => !akkordion2)}>
               <button className='modal__butcow'>Говядина/Индейка</button>
               <div className="modal__weight2">3 шт</div>
            </div>
@@ -77,8 +80,8 @@ return(
           </div>
           <div className="modal__butandprice">
             <div className="modal__pricewrap">
-              <div className="modal__oldprice">{props.data[props.butId - 1].oldprice}</div>
-              <div className="modal__newprice">{props.data[props.butId - 1].newprice}</div>
+              <div className="modal__oldprice">{oldPrice}</div>
+              <div className="modal__newprice">{newPrice}</div>
             </div>
           <button className='modal__button'>Відправити</button>
           </div>

@@ -6,12 +6,14 @@ import apple from '../../image/apple.png';
 import redmeat from '../../image/redmeat.png';
 import { Link } from 'react-router-dom';
 import Modal from '../modal/Modal';
-
+import ModalCount from '../modalCount/ModalCount';
 const SetsZoov = () => {
 
 const [data, setData] = useState([]);
 const [modal, setModal] = useState(false);
-const [butid, setButId] = useState(null)
+const [butid, setButId] = useState(null);
+
+
 const {request} = useHttp();
 
 useEffect(() =>{
@@ -50,10 +52,13 @@ const getInfoModal = () =>{
         }
         
         <div className="sets__calc">
+        {
+          modal ? <ModalCount/> : null
+        }
           <div className="sets__calctext">
           Рассчитаем в каком количестве нужно кормить вашего хвостика рационами Zooov
           </div>
-          <button className="sets__calcbutton">Расчитать</button>
+          <button onClick={() => setModal(true)} className="sets__calcbutton">Расчитать</button>
           <div className="sets__applemeatwrap">
 
             <div className="sets__applewrap"><img src={apple} alt="apple" /></div>
