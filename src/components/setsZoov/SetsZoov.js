@@ -12,6 +12,7 @@ const SetsZoov = () => {
 const [data, setData] = useState([]);
 const [modal, setModal] = useState(false);
 const [butid, setButId] = useState(null);
+const [modalCount, setModalCount] = useState(false);
 
 
 const {request} = useHttp();
@@ -44,8 +45,6 @@ const getInfoModal = () =>{
           })
 
         }
-
-
         {
             modal ? <Modal data = {data} butId = {butid}  modal = {modal} setModal = {setModal}/> : null
  
@@ -53,12 +52,12 @@ const getInfoModal = () =>{
         
         <div className="sets__calc">
         {
-          modal ? <ModalCount/> : null
+          modalCount ? <ModalCount modalCount = {modalCount} setModalCount = {setModalCount}/> : null
         }
           <div className="sets__calctext">
           Рассчитаем в каком количестве нужно кормить вашего хвостика рационами Zooov
           </div>
-          <button onClick={() => setModal(true)} className="sets__calcbutton">Расчитать</button>
+          <button onClick={() => setModalCount(true)} className="sets__calcbutton">Расчитать</button>
           <div className="sets__applemeatwrap">
 
             <div className="sets__applewrap"><img src={apple} alt="apple" /></div>

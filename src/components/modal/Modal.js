@@ -25,7 +25,7 @@ const postData = () =>{
 }
 
 return(
-  <div onClick={() => props.setModal(false)} /* style={{display: props.modal ? 'block': 'none'}} */ className={props.modal ? 'modal active' : 'modal'}>
+  <div onClick={() => props.setModal(false)} /* style={{display: props.modal ? 'block': 'none'}} */ className={props.modal ? 'modal active' : 'modal' }>
     <div onClick={(e) => e.stopPropagation()} className= "modal__content">
 
       <div onClick={() => props.setModal(false)} className="modal__close">&times;</div>
