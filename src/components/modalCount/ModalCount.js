@@ -1,6 +1,13 @@
 import './modalCount.scss';
+import { useState, useEffect } from 'react';
+import { useHttp } from '../../hooks/http.hook';
 
 const ModalCount = (props) =>{
+  const [weight, setWeight] = useState('');
+  
+  const {request} = useHttp();
+
+
   return(
     <div className = {props.modalCount ? 'modalcount active': 'modalcount'}>
     <div className="modalcount__content" onClick={(e) => e.stopPropagation()}>
@@ -15,9 +22,20 @@ const ModalCount = (props) =>{
 
           <div className="modalcount__inpwrp">
 
-          <input className='modalcount__oldinp' name='type' type="radio"/> Взрослая собака
-          <input className='modalcount__littleinp' name='type' type="radio"/>Щенок
-
+          <div>
+            <input className='modalcount__oldinp' name='type' type="radio" id='old'/> 
+            <label htmlFor='old' className='modalcount__old'>
+                Взрослая собака
+            </label> 
+          </div>
+         
+          <div>
+          <input id='little' className='modalcount__littleinp' name='type' type="radio"/>
+            <label htmlFor='little' className='modalcount__little'>
+                Щенок  
+            </label>
+          </div>
+            
           </div>
 
           <input className='modalcount__weight' type="text" placeholder='Вес (кг)'/>
@@ -27,11 +45,12 @@ const ModalCount = (props) =>{
           <input className='modalcount__number' type="number" placeholder='Телефон'/>
           <textarea className='modalcount__area' type="text" placeholder='Если у вашего хвостика есть особенности
            здоровья – напишите об этом...' />
-
-           <label className="modalcount__check">
-           Даю согласие на обработку персональных данных
-            <input type="checkbox" className="modalcount__checkinp" />
+           <div className='modalcount__checkinpwrap'>
+            <input id='dat' type="checkbox" className="modalcount__checkinp" />
+            <label htmlFor='dat' className="modalcount__check">
+              Даю согласие на обработку персональных данных
            </label>
+           </div>
 
            <button className="modalcount__button">Расчитать</button>
         </form>

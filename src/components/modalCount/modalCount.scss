@@ -13,23 +13,132 @@
   &__content{
     position: absolute;
     background: white;
-    width: 548px;
-    min-height: 568px;
+    width: 455px;
+    height: 568px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); 
-    overflow-y: scroll;
+    overflow-y: auto;
   }
  
   &__close{
     position: absolute;
-    left: 510px;
+    left: 410px;
     right: 0;
     top: 0;
     font-size: 42px;
     color: #616161;
     cursor: pointer;
   }
+
+  &__ratio{
+    font-weight: 700;
+    font-size: 35px;
+    color: #961914;
+    margin-top: 36px;
+    text-align: left;
+    margin-left: 28px;
+  }
+  &__descr{
+    width: 400px;
+    font-weight: 400;
+    font-size: 15px;
+    color: #000000;
+    margin: 0 auto;
+    margin-top: 16px;
+  }
+  &__whatsapp,&__telegram{
+    color: #961914;
+  }
+  &__form{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 32px;
+
+  }
+  &__inpwrp{
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__old, &__little{
+    margin-left: 6px;
+}
+  &__weight, &__age, &__name, &__type, &__number{
+    width: 400px;
+    height: 48px;
+    background: #F4F5F5;
+    border-radius: 8px;
+    border: none;
+    padding-left: 10px;
+    margin-top: 17px;
+}
+  &__weight{
+    margin-top: 28px;
+  }
+  &__area{
+    width: 400px;
+    height: 97px;
+    background: #F4F5F5;
+    border-radius: 8px;
+    resize: none;
+    border: none;
+    padding: 20px 20px 20px 10px;
+    margin-top: 17px;
+    }
+  &__check{
+    font-weight: 400;
+    font-size: 12px;
+    color: #9F9E9D;
+  }
+  &__checkinp {
+    opacity: 0;
+}
+  &__checkinp ~ label::before {
+  &__checkinp {
+  opacity: 0;
+  }
+  }
+  &__checkinp ~ label::before {
+    content: '\2713';  
+    text-align: center;
+    color: white;
+    line-height: 1em;
+    width: 1em;
+    height: 1em;
+    border: 1px inset #000;
+    border-radius: 0.25em;
+    margin: 0.25em;
+    display: inline-block;
+  }
+  &__checkinp:checked ~ label::before {
+    color: red;
+    border: 2px inset red;
+  }
+  
+ &__checkinpwrap{
+  width: 400px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-top: 24px;
+ }
+ &__button{
+  width: 400px;
+  height: 48px;
+  background: #961914;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+  color: #FFFFFF;
+  margin-top: 24px;
+  margin-bottom: 20px;
+ }
 }
 .modalcount.active{
   opacity: 1;
