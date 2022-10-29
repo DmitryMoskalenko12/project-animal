@@ -1,6 +1,7 @@
 import './modalCount.scss';
 import { useState } from 'react';
 import { useHttp } from '../../hooks/http.hook';
+import ThanksModal from '../thanksModal/ThanksModal';
 
 const ModalCount = (props) =>{
   const [weight, setWeight] = useState('');
@@ -73,7 +74,7 @@ const content = (
       <div className="modalcount__close" onClick={() => props.setModalCount(false)}>&times;</div>
 
      {
-      showContent ? content : 'nurvuruvru'
+      showContent ? content : <ThanksModal/>
      }
     </div>
     </div>

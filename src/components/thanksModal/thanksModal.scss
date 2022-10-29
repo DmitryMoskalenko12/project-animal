@@ -1,0 +1,17 @@
+.modalthanks{
+  width: 435px;
+  height: 200px;
+  &__thanks{
+    font-weight: 700;
+    font-size: 40px;
+    color: #961914;
+    text-align: center;
+    margin-top: 69px;
+  }
+  &__descr{
+    font-weight: 400;
+    font-size: 15px;
+    text-align: center;
+    color: #000000;
+  }
+}
