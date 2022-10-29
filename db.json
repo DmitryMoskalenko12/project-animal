@@ -32,6 +32,16 @@
     }
   ],
   "post": [
-    
+    {
+      "weight": "6",
+      "sizedog": "big",
+      "age": "5",
+      "type": "etgrth",
+      "name": "rgrth",
+      "number": "465656567767",
+      "area": "tbfntyhy",
+      "check": "on",
+      "id": 1
+    }
   ]
 }
