@@ -13,14 +13,17 @@
   &__content{
     position: absolute;
     background: white;
-    width: 872px;
-    min-height: 568px;
+    min-width: 435px;
+    min-height: 200px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); 
-    overflow-y: scroll;
+   /*  overflow-y: auto; */
   }
- 
+  &__wrapall{
+    width: 872px;
+    height: 530px;
+  }
   &__close{
     position: absolute;
     left: 835px;

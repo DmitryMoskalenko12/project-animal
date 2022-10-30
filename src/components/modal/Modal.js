@@ -1,16 +1,19 @@
 import './modal.scss';
 import { useHttp } from '../../hooks/http.hook';
 import { useState } from 'react';
+import ThanksModal from '../thanksModal/ThanksModal';
 
 const Modal = (props) => {
-const {post} = useHttp();
-
 const [name, setName] = useState('');
 const [email, setEmail] = useState('');
 const [tel, setTel] = useState('');
 const [check, setCheck] = useState(null);
 const [akkordion1, setAkkordion1] = useState(false);
 const [akkordion2, setAkkordion2] = useState(false);
+const [showModal, setShowModal] = useState(true);
+const [error, setError] = useState(false);
+
+const {request} = useHttp();
 
 const set = props.data[props.butId - 1].set,
       oldPrice = props.data[props.butId - 1].oldprice,
@@ -19,18 +22,13 @@ const set = props.data[props.butId - 1].set,
 const postData = () =>{
 
   const formData = {name: name, email: email, tel: tel, checkbox: check, set, oldPrice, newPrice}
-  const json = JSON.stringify(formData);
-  post('http://localhost:3001/post', json)
-  .then(() => setName(''), setEmail(''), setTel(''), setCheck(false), setTimeout(()=>{props.setModal(false)}, 2000) )
+  request('http://localhost:3001/post', 'POST', JSON.stringify(formData))
+  .then(() => setName(''), setEmail(''), setTel(''), setCheck(false), setTimeout(()=>{props.setModal(false)}, 2000))
+  .catch(()=> setError(true))
 }
-
-return(
-  <div onClick={() => props.setModal(false)} /* style={{display: props.modal ? 'block': 'none'}} */ className={props.modal ? 'modal active' : 'modal' }>
-    <div onClick={(e) => e.stopPropagation()} className= "modal__content">
-
-      <div onClick={() => props.setModal(false)} className="modal__close">&times;</div>
-
-      <div className="modal__contentwrap">
+const content = (
+  <div className='modal__wrapall'>
+   <div className="modal__contentwrap">
         <div className="modal__imgwrap">
           <div className="modal__imgtext">{props.data[props.butId - 1].title}</div>
           <img src={props.data[props.butId - 1].picture} alt={props.data[props.butId - 1].title} />
@@ -67,7 +65,7 @@ return(
               </div>
           
 
-           <form onSubmit={(e) => {postData(); e.preventDefault()}} className='modal__form'>
+           <form onSubmit={(e) => {postData(); setShowModal(false); e.preventDefault()}} className='modal__form'>
             <input value={name} onChange={(e) => setName(e.target.value)} className='modal__name' type="text" name='name' required placeholder='Name' />
             <input value={tel} onChange={(e) => setTel(e.target.value)} className='modal__tel' type="number" name='phone' required placeholder='Tel'/>
             <input value={email} onChange={(e) => setEmail(e.target.value)} className='modal__email' type="email" name='email' required placeholder='Email'/>
@@ -90,7 +88,17 @@ return(
 
         </div>
       </div>
+  </div>
+)
+return(
+  <div onClick={() => props.setModal(false)} /* style={{display: props.modal ? 'block': 'none'}} */ className={props.modal ? 'modal active' : 'modal' }>
+    <div onClick={(e) => e.stopPropagation()} className= "modal__content">
 
+      <div onClick={() => props.setModal(false)} className="modal__close">&times;</div>
+
+     {
+    error ? <div style={{textAlign: 'center',fontSize: '20px', marginTop: '80px', color: 'red'}}>Произошла ошибка</div>: showModal ? content : <ThanksModal/>
+     }
 
     </div>
   </div>

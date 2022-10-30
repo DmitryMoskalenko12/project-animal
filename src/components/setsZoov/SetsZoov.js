@@ -25,7 +25,7 @@ useEffect(() =>{
 const getInfoModal = () =>{
   request('http://localhost:3001/sectionCard1')
   .then(res => setData(res))
-  .catch(console.log('error'))
+  .catch(()=> console.log('error'))
 }
 
   return(

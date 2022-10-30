@@ -12,14 +12,27 @@ const ModalCount = (props) =>{
   const [number, setNumber] = useState('');
   const [area, setArea] = useState('');
   const [check, setCheck] = useState('');
-  const {post} = useHttp();
   const [showContent, setShowContent] = useState(true);
+  const [error, setError] = useState(false);
+  const {request} = useHttp();
+  
+  
 
   const postData = () =>{
     const res = {weight, sizedog, age, type, name, number, area, check } 
-    const json = JSON.stringify(res)
-    post('http://localhost:3001/post', json)
-    .then(() => setAge(''), setSizeDog(''), setWeight(''), setType(''), setName(''), setNumber(''), setArea(''), setCheck(''), setTimeout(()=>{props.setModalCount(false)}, 2000))
+     request('http://localhost:3001/post', 'POST', JSON.stringify(res))
+    .then(() => {
+    setAge(''); 
+    setSizeDog('');
+    setWeight(''); 
+    setType(''); 
+    setName('');
+    setNumber(''); 
+    setArea(''); 
+    setCheck('');  
+    setTimeout(()=>{props.setModalCount(false)}, 2000)})
+    .catch(() => setError(true), setTimeout(()=>{props.setModalCount(false)}, 2000))
+    
   }
 
 const content = (
@@ -29,7 +42,7 @@ const content = (
     Заполните информацию и мы свяжемся с вами, чтобы подсказать с подбором рациона для вашего хвостика.
     Или напишите нам в мессендерах <a href='#' className='modalcount__whatsapp'>WhatsApp</a> и <a href="#" className='modalcount__telegram'>Telegram.</a></div>
 
-    <form  onSubmit={(e) => {postData(); setShowContent(false); e.preventDefault()}} className='modalcount__form'>
+    <form  onSubmit={(e) => {e.preventDefault(); postData(); setShowContent(false)}} className='modalcount__form'>
 
       <div className="modalcount__inpwrp">
 
@@ -74,8 +87,9 @@ const content = (
       <div className="modalcount__close" onClick={() => props.setModalCount(false)}>&times;</div>
 
      {
-      showContent ? content : <ThanksModal/>
+     error ? <div style={{textAlign: 'center',fontSize: '20px', marginTop: '80px', color: 'red'}}>Произошла ошибка</div> : showContent ? content : <ThanksModal/>
      }
+    
     </div>
     </div>
   )

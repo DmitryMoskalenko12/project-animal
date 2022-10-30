@@ -26,7 +26,7 @@ return(
 
 <button data-number = {id} onClick={(e) => {
   setModal(true)
-  setButId(e.currentTarget.getAttribute('data-number'))  }} className="sets__button">Заказать</button>
+  setButId(e.currentTarget.getAttribute('data-number'))}} className="sets__button">Заказать</button>
 
 </div>
   </>
