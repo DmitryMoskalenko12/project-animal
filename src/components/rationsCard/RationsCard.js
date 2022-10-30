@@ -1,4 +1,4 @@
-const RationsCard = ({picture, type, chick, descr, weight, id }) =>{
+const RationsCard = ({picture, type, chick, descr, weight, id, setModal, setButId }) =>{
   return(
     <>
      <div className="rations__card">
@@ -9,7 +9,7 @@ const RationsCard = ({picture, type, chick, descr, weight, id }) =>{
       <div className="rations__gar">{chick}</div>
       <div className="rations__carddescr">{descr}</div>
       <div className="rations__weight">{weight}</div>
-      <button className="rations__but">Заказать</button>
+      <button data-id ={id} onClick={(e) => {setModal(true); setButId(e.currentTarget('data-id'))}} className="rations__but">Заказать</button>
     </div>
     </>
   )

@@ -1,0 +1,48 @@
+.modalrations{
+  position: fixed;
+  background: rgba(0,0,0,.5);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+
+  &__content{
+    position: absolute;
+    background: white;
+    min-width: 435px;
+    min-height: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+   /*  overflow-y: auto; */
+  }
+  &__wrapall{
+    width: 700px;
+    min-height: 400px;
+  }
+  &__gridwrapp{
+    display: grid;
+    grid-template-columns: 280px 366px;
+    grid-template-rows: minmax(350px, auto);
+    column-gap: 32px;
+    grid-auto-rows: minmax(350px, auto);
+    margin-top: 32px;
+  }
+  &__close{
+    position: absolute;
+    left: 670px;
+    right: 0;
+    top: 0;
+    font-size: 42px;
+    color: #616161;
+    cursor: pointer;
+  }
+}
+.modalrations.active{
+  opacity: 1;
+  transition: all 1s;
+  pointer-events: all;
+}
