@@ -1,0 +1,81 @@
+.rations{
+  min-height: 600px;
+  &__titlewrap{
+    display: grid;
+    grid-template-columns: 510px 588px;
+    grid-template-rows: 80px;
+    grid-auto-rows: 68px;
+    column-gap: 68px;
+    align-items: center;
+  }
+  &__boldsets{
+    font-weight: 700;
+    font-size: 36px;
+    color: #000000;
+  }
+  &__descr{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: #000000;
+    margin-top: 10px;
+  }
+  &__bigwrap{
+    display: grid;
+    grid-template-columns: repeat(4, 282px);
+    grid-template-rows: minmax(335px, auto);
+    grid-auto-rows: minmax(335px, auto); 
+    column-gap: 25px;
+    margin-top: 40px;
+    justify-content: center;
+  }
+  &__pictwrap{
+    width: 280px;
+    height: 280px;
+    border: 1px solid red;
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__typedog{
+    font-weight: 700;
+    font-size: 16px;
+    color: #000000;
+    margin-top: 20px;
+  }
+  &__gar{
+    font-weight: 400;
+    font-size: 13px;
+    color: #9F9E9D;
+    margin-top: 4px;
+  }
+  &__carddescr{
+    font-weight: 400;
+    font-size: 14px;
+    color: #434242;
+    margin-top: 16px;
+  }
+  &__weight{
+    font-weight: 400;
+    font-size: 13px;
+    color: #9F9E9D;
+    margin-top: 11px;
+  }
+  &__but{
+    width: 171px;
+    height: 48px;
+    background: transparent;
+    border-radius: 8px;
+    border: 2px solid #961914;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    color: #961914;
+    padding-top: 2px;
+    margin-top: 23px;
+    cursor: pointer;
+
+  }
+}

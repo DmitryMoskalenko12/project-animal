@@ -14,25 +14,23 @@ const ModalCount = (props) =>{
   const [check, setCheck] = useState('');
   const [showContent, setShowContent] = useState(true);
   const [error, setError] = useState(false);
+
   const {request} = useHttp();
   
-  
-
   const postData = () =>{
     const res = {weight, sizedog, age, type, name, number, area, check } 
      request('http://localhost:3001/post', 'POST', JSON.stringify(res))
     .then(() => {
-    setAge(''); 
-    setSizeDog('');
-    setWeight(''); 
-    setType(''); 
-    setName('');
-    setNumber(''); 
-    setArea(''); 
-    setCheck('');  
-    setTimeout(()=>{props.setModalCount(false)}, 2000)})
-    .catch(() => setError(true), setTimeout(()=>{props.setModalCount(false)}, 2000))
-    
+      setAge(''); 
+      setSizeDog('');
+      setWeight(''); 
+      setType(''); 
+      setName('');
+      setNumber(''); 
+      setArea(''); 
+      setCheck('');  
+      setTimeout(()=>{props.setModalCount(false)}, 2000)})
+    .catch(() => setError(true), setTimeout(()=>{props.setModalCount(false)}, 2000)) 
   }
 
 const content = (
@@ -84,7 +82,7 @@ const content = (
   return(
     <div onClick={() => props.setModalCount(false)}  className = {props.modalCount ? 'modalcount active': 'modalcount'}>
     <div className="modalcount__content" onClick={(e) => e.stopPropagation()}>
-      <div className="modalcount__close" onClick={() => props.setModalCount(false)}>&times;</div>
+    <div className="modalcount__close" onClick={() => props.setModalCount(false)}>&times;</div>
 
      {
      error ? <div style={{textAlign: 'center',fontSize: '20px', marginTop: '80px', color: 'red'}}>Произошла ошибка</div> : showContent ? content : <ThanksModal/>

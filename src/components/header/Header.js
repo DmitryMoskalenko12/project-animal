@@ -7,14 +7,14 @@ return(
   <a className='main-section__logo' href="#"><img src={logo} alt="logo" /></a>
   <ul className="main-section__menu">
   <li className="main-section__item">
-    <Link end to='/barf' className="main-section__link">
+    <Link to='/barf' className="main-section__link">
     BARF
     </Link>
   </li>
   <li className="main-section__item">
-    <a href="#" className="main-section__link">
+    <Link to={'/rations'} className="main-section__link">
     Рационы
-    </a>
+    </Link>
   </li>
   <li className="main-section__item">
     <Link to='/sets' className="main-section__link">
