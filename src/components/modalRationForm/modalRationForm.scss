@@ -26,4 +26,118 @@
     justify-content: center;
     align-items: center;
   }
+  &__name, &__phone, &__addr, &__weight{
+    width: 330px;
+    height: 48px;
+    background: #F4F5F5;
+    border-radius: 8px;
+    border: none;
+    padding-left: 10px;
+    margin-bottom: 16px;
+  }
+  &__coll{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
+    margin-top: 16px;
+  }
+  &__calc{
+    width: 330px;
+    height: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 20px;
+  }
+  &__calctitle{
+    font-weight: 400;
+    font-size: 14px;
+    color: #000000;
+    text-align: left;
+  }
+  &__plusminus{
+    width: 160px;
+    height: 48px;
+    background: #F4F5F5;
+    border-radius: 8px;
+    margin-right: 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+ &__plus, &__minus{
+  font-weight: 400;
+  font-size: 20px;
+  color: #000000;
+  cursor: pointer;
+ }
+ &__checkboxwrap{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#modal__checkboxform {
+  opacity: 0;
+}
+#modal__checkboxform ~ label::before {
+
+#modal__checkboxform {
+opacity: 0;
+}
+}
+#modal__checkboxform ~ label::before {
+  content: '\2713';  
+  text-align: center;
+  color: white;
+  line-height: 1em;
+  width: 1em;
+  height: 1em;
+  border: 1px inset #000;
+  border-radius: 0.25em;
+  margin: 0.25em;
+  display: inline-block;
+}
+#modal__checkboxform:checked ~ label::before {
+  color: red;
+  border: 2px inset red;
+}
+&__checkdescr{
+  font-weight: 400;
+  font-size: 12px;
+  color: #9F9E9D;
+  margin-left: -45px;
+  margin-top: 23px;
+}
+&__butprice{
+  width: 330px;
+  height: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 47px;
+  margin-right: 32px;
+}
+&__price{
+  font-weight: 500;
+  font-size: 20px;
+  color: #000000;
+}
+&__butform{
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+  color: #961914;
+  width: 200px;
+  height: 40px;
+  border: 1px solid #961914;
+  cursor: pointer;
+  background: transparent;
+  border-radius: 8px;
+  padding-top: 8px;
+}
 }
