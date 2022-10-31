@@ -30,6 +30,7 @@
     column-gap: 32px;
     grid-auto-rows: minmax(350px, auto);
     margin-top: 32px;
+    margin-bottom: 34px;
   }
   &__close{
     position: absolute;
@@ -38,6 +39,65 @@
     top: 0;
     font-size: 42px;
     color: #616161;
+    cursor: pointer;
+  }
+  &__imgwrap{
+    width: 280px;
+    height: 280px;
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__title{
+    font-weight: 700;
+    font-size: 20px;
+    color: #000000;
+  }
+  &__chick{
+    font-weight: 400;
+    font-size: 15px;
+    color: #9F9E9D;
+    margin-top: 4px;
+  }
+  &__vitamin{
+    font-weight: 400;
+    font-size: 14px;
+    color: #434242;
+    margin-top: 16px;
+  }
+  &__include{
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 140%;
+    color: #434242;
+    margin-top: 25px;
+  }
+  &__call{
+    font-weight: 600;
+    font-size: 14px;
+    color: #434242;
+    margin-top: 42px;
+  }
+  &__weight{
+    font-weight: 400;
+    font-size: 13px;
+    color: #9F9E9D;
+    margin-top: 19px;
+  }
+  &__button{
+    width: 171px;
+    height: 48px;
+    background: transparent;
+    border-radius: 8px;
+    border: 2px solid #961914;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    color: #961914;
+    padding-top: 2px;
+    margin-top: 40px;
     cursor: pointer;
   }
 }

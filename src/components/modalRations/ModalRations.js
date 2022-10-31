@@ -1,15 +1,21 @@
 import './modalRations.scss';
+import { useState } from 'react';
+import ModalRationForm from '../modalRationForm/ModalRationForm';
+
 const ModalRations = (props) =>{
+
+  const [formModal, setFormModal] = useState(false);
+
 const content = (
   <div className='modalrations__wrapall'>
     <div className="modalrations__gridwrapp">
       <div className="modalrations__imgwrap">
-        <img src="./image/pict1.png" alt="pict1" />
+        <img src={props.data[props.butid - 1].picture} alt="pict1" />
       </div>
       <div className="modalrations__contentwrapp">
-        <div className="modalrations__title">Для взрослых собак </div>
-        <div className="modalrations__chick">Баранина/Кролик</div>
-        <div className="modalrations__vitamin">Подходит для ежедвеного кормления. Богат животными белками и Омега-3.</div>
+        <div className="modalrations__title">{props.data[props.butid - 1].type} </div>
+        <div className="modalrations__chick">{props.data[props.butid - 1].chick}</div>
+        <div className="modalrations__vitamin">{props.data[props.butid - 1].descr}</div>
         <div className="modalrations__include">Состав: Мякоть баранины (46,5%), мясо кролика (23,5%), кости
         кролика (10%), печень баранины (5%), почки бараньи (2,5%),
         рубец бараний (2,5%), кабачок (3%), брокколи (3%), семена
@@ -17,8 +23,8 @@ const content = (
         конопляное масло.</div>
         <div className="modalrations__call">Пищевая ценность на 100г: 174.9 ккал, 
         белки 16.45, жиры 11.9, углеводы 0.60</div>
-        <div className="modalrations__weight">500г/300г/100г</div>
-        <button className="modalrations__button">Заказать</button>
+        <div className="modalrations__weight">{props.data[props.butid - 1].weight}</div>
+        <button className="modalrations__button" onClick={() => setFormModal(true)}>Заказать</button>
       </div>
     </div>
   </div>
@@ -30,7 +36,7 @@ const content = (
       <div onClick={() => props.setModal(false)} className="modalrations__close">&times;</div>
 
      {
-   /*  error ? <div style={{textAlign: 'center',fontSize: '20px', marginTop: '80px', color: 'red'}}>Произошла ошибка</div>: showModal ? content : <ThanksModal/> */ content
+   /*  error ? <div style={{textAlign: 'center',fontSize: '20px', marginTop: '80px', color: 'red'}}>Произошла ошибка</div>: showModal ? content : <ThanksModal/> */ formModal ? <ModalRationForm data = {props.data} id = {props.butid}/> : content
      }
 
     </div>

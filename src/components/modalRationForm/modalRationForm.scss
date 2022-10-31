@@ -1,0 +1,29 @@
+.modalrationform{
+  width: 700px;
+  min-height: 400px;
+  &__wrapall{
+    display: grid;
+    grid-template-columns: 280px 366px;
+    grid-template-rows: minmax(350px, auto);
+    column-gap: 32px;
+    grid-auto-rows: minmax(350px, auto);
+    margin-top: 32px;
+    margin-bottom: 34px;
+  }
+  &__title{
+    font-weight: 700;
+    font-size: 20px;
+    color: #000000;
+  }
+  &__meat{
+    font-weight: 400;
+    font-size: 15px;
+    color: #9F9E9D;
+  }
+  &__form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
