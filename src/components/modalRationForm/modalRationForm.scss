@@ -1,6 +1,7 @@
 .modalrationform{
-  width: 700px;
-  min-height: 400px;
+  position: relative;
+  min-width: 435px;
+  min-height: 200px;
   &__wrapall{
     display: grid;
     grid-template-columns: 280px 366px;
@@ -9,6 +10,15 @@
     grid-auto-rows: minmax(350px, auto);
     margin-top: 32px;
     margin-bottom: 34px;
+  }
+  &__close{
+    position: absolute;
+    left: 640px;
+    right: 0;
+    top: -30px;
+    font-size: 42px;
+    color: #616161;
+    cursor: pointer;
   }
   &__title{
     font-weight: 700;
@@ -138,6 +148,6 @@ opacity: 0;
   cursor: pointer;
   background: transparent;
   border-radius: 8px;
-  padding-top: 8px;
+ 
 }
 }

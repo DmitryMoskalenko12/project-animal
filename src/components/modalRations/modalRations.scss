@@ -68,17 +68,25 @@
     margin-top: 16px;
   }
   &__include{
+    margin-top: 25px;
+    font-weight: 400;
+    font-size: 12px;
+    span{
     font-weight: 600;
     font-size: 14px;
     line-height: 140%;
     color: #434242;
-    margin-top: 25px;
+    }
   }
   &__call{
+    font-weight: 400;
+    font-size: 12px;
+    margin-top: 42px;
+    span{
     font-weight: 600;
     font-size: 14px;
-    color: #434242;
-    margin-top: 42px;
+    color: #434242; 
+    }
   }
   &__weight{
     font-weight: 400;
