@@ -10,6 +10,7 @@ const Main = lazy(() => import('../mainSection/MainSection'));
 const Barf = lazy(() => import('../barf/Barf'));
 const SetsZoov = lazy(() => import('../setsZoov/SetsZoov'));
 const RationsList = lazy(() => import('../rationsList/RationsList'))
+const AboutUs = lazy(() => import('../aboutUs/AboutUs'))
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path='/barf' element={<Barf/>}/>
           <Route path='/sets' element={<SetsZoov/>}/>
           <Route path='/rations' element={<RationsList/>}/>
+          <Route path='/about' element = {<AboutUs/>}/>
           </Routes>  
         </Router>
     </Suspense>

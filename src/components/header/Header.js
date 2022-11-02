@@ -22,9 +22,9 @@ return(
     </Link>
   </li>
   <li className="main-section__item">
-    <a href="#" className="main-section__link">
+    <Link to={'/about'} className="main-section__link">
     О нас
-    </a>
+    </Link>
   </li>
   <li className="main-section__item">
     <a href="#" className="main-section__link">
