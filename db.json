@@ -120,6 +120,46 @@
       "check": "",
       "price": "250 грн",
       "id": 5
+    },
+    {
+      "count": 3,
+      "name": "grtghrth",
+      "phone": "565656",
+      "addr": "htrhth",
+      "weight": "500",
+      "check": "",
+      "price": "400 грн",
+      "id": 6
+    },
+    {
+      "count": 3,
+      "name": "rthrjj",
+      "phone": "576767",
+      "addr": "jtjyuju",
+      "weight": "300",
+      "check": "",
+      "price": "400 грн",
+      "id": 7
+    },
+    {
+      "count": 2,
+      "name": "rthyh",
+      "phone": "56576",
+      "addr": "76767",
+      "weight": "150",
+      "check": "",
+      "price": "400 грн",
+      "id": 8
+    },
+    {
+      "count": 3,
+      "name": "thryhty",
+      "phone": "567676",
+      "addr": "77667",
+      "weight": "500",
+      "check": "",
+      "price": "400 грн",
+      "id": 9
     }
   ]
 }
