@@ -4,6 +4,7 @@ import paw from '../../image/PawPrint.png';
 import smiley from '../../image/Smiley.png';
 import './aboutUs.scss';
 import { Link } from 'react-router-dom';
+import Love from '../love/Love';
 
 const AboutUs = () =>{
 return(
@@ -49,6 +50,7 @@ return(
         </div>
       </div>
     </div>
+    <Love/>
   </section>
 )
 }
