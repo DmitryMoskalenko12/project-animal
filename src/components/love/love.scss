@@ -7,10 +7,27 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 0 auto;
+  margin-top: 30px;
 }
 .but{
   width: 20px;
   height: 20px;
   border: 1px solid black;
   cursor: pointer;
+}
+.but.active{
+  border: 1px solid red;
+}
+.delete{
+  width: 80px;
+  padding: 10px 10px 10px 10px;
+  background: red;
+  cursor: pointer;
+}
+.inp{
+ width: 200px;
+ height: 50px;
+ padding: 10px;
+
 }
