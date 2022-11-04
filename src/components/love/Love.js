@@ -8,18 +8,15 @@ const [data, setData] = useState([]);
 const [limit, setLimit] = useState(10);
 const [page, setPage] = useState(1);
 const [totalCount, setTotalCount] = useState(0);
-const [search, setSearch] = useState('')
+const [search, setSearch] = useState('');
+const [title, setTitle] = useState('');
+const [body, setBody] = useState('');
 
+/* постраничная пагинация */
 const postData = async(limit = 10, page = 1) =>{
 const res = await axios.get(`https://jsonplaceholder.typicode.com/posts?_limit=${limit}&_page=${page}`)
 return res
 }
-
-function totalCounts() {
-  return Math.ceil(totalCount / limit)
-}
-
-const pages = totalCounts(); 
 
 const getData = async() =>{
   const res = await postData(limit, page)
@@ -28,6 +25,11 @@ const getData = async() =>{
 
 }
 
+function totalCounts() {
+  return Math.ceil(totalCount / limit)
+}
+
+const pages = totalCounts(); 
 
 const result = []
 for (let i = 0; i < pages; i++) {
@@ -44,17 +46,36 @@ const onSearch = (data, word) =>{
   }
   return data.filter(item => item.title.includes(word))
 }
+/* добавление */
+const setItem = () =>{
+  let item = {
+    title,
+    body,
+    id: Date.now()
+  }
+  setData([...data, item])
+  setTitle('');
+  setBody('');
+}
 
 useEffect(() =>{
 getData()
-
 },[page])
 
 console.log('ger')
 const res = onSearch(data, search); 
-console.log(res)
+
+/* лента водопад */
+
+
   return(
     <>
+    <form onSubmit={(e) => {e.preventDefault(); setItem()}} className="form">
+      <input onChange={(e) => setTitle(e.target.value)} value={title} className="name" placeholder="Title" name='name'  required type="text" />
+      <input onChange={(e) => setBody(e.target.value)} type ='text' value={body} className="tel" placeholder="Body" name='tel' required/>
+      <button className="but">Click</button>
+    </form>
+
     <input onChange={(e) => {
       setSearch(e.target.value)
       }} className="inp" type="text" placeholder="Enter here" />
