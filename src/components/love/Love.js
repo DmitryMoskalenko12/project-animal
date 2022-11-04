@@ -38,20 +38,28 @@ const delItem = (id) =>{
 setData(data.filter(item =>  item.id !== id))
 }
 /* поиск */
-const onSearch = () =>{
-
+const onSearch = (data, word) =>{
+  if (word.length === 0) {
+    return data
+  }
+  return data.filter(item => item.title.includes(word))
 }
+
 useEffect(() =>{
 getData()
 
 },[page])
 
 console.log('ger')
+const res = onSearch(data, search); 
+console.log(res)
   return(
     <>
-    <input className="inp" type="text" placeholder="Enter here" />
+    <input onChange={(e) => {
+      setSearch(e.target.value)
+      }} className="inp" type="text" placeholder="Enter here" />
        {
-          data.map(({body, title, id})=>{
+          res.map(({body, title, id})=>{
             return(
               <Fragment key={id}>
                <div  className="love">
