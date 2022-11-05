@@ -11,7 +11,8 @@ const [totalCount, setTotalCount] = useState(0);
 const [search, setSearch] = useState('');
 const [title, setTitle] = useState('');
 const [body, setBody] = useState('');
-const [fetching, setFetching] = useState(true)
+const [fetching, setFetching] = useState(true);
+const [filter, setFilter] = useState('all')
 /* постраничная пагинация */
 
 const postData = async(limit = 10, page = 1) =>{
@@ -58,13 +59,28 @@ const setItem = () =>{
   setTitle('');
   setBody('');
 }
+/* фильтры */
+const onFilterChange = (data, filter) =>{
+ switch (filter) {
+  case 'dolorem dolore est ipsam':
+    return data.filter(item => item.title === filter)
+
+  case 'qui est esse':
+    return data.filter(item => item.title === filter)
+
+  case 'all':
+    return data.filter(item => item)
+  default:
+    break;
+}
+}
 
 useEffect(() =>{
 getData()
 },[page])
 
 console.log('ger')
-const res = onSearch(data, search); 
+const res = onFilterChange(onSearch(data, search), filter); 
 
 
 /* лента водопад */
@@ -93,8 +109,8 @@ function scroll() {
   if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight - 3) {
     setFetching(true);
   }
-} */
-
+}
+ */
   return(
     <>
     <form onSubmit={(e) => {e.preventDefault(); setItem()}} className="form">
@@ -102,6 +118,12 @@ function scroll() {
       <input onChange={(e) => setBody(e.target.value)} type ='text' value={body} className="tel" placeholder="Body" name='tel' required/>
       <button className="but">Click</button>
     </form>
+
+    <div className="btnswrap">
+      <button onClick={(e)=> setFilter(e.target.textContent)} className="but1">dolorem dolore est ipsam</button>
+      <button onClick={(e)=> setFilter(e.target.textContent)} className="but1">qui est esse</button>
+      <button onClick={(e)=> setFilter(e.target.textContent)} className="but1">all</button>
+    </div>
 
     <input onChange={(e) => {
       setSearch(e.target.value)
