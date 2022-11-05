@@ -11,8 +11,9 @@ const [totalCount, setTotalCount] = useState(0);
 const [search, setSearch] = useState('');
 const [title, setTitle] = useState('');
 const [body, setBody] = useState('');
-
+const [fetching, setFetching] = useState(true)
 /* постраничная пагинация */
+
 const postData = async(limit = 10, page = 1) =>{
 const res = await axios.get(`https://jsonplaceholder.typicode.com/posts?_limit=${limit}&_page=${page}`)
 return res
@@ -65,8 +66,34 @@ getData()
 console.log('ger')
 const res = onSearch(data, search); 
 
+
 /* лента водопад */
 
+/* useEffect( () => {
+  if (fetching) {
+    axios.get(`https://jsonplaceholder.typicode.com/posts?_limit=10&_page=${page}`)
+    .then(res => {
+      setData([...data, ...res.data])
+      setPage( page => page + 1)
+    })
+    .finally(() => setFetching(false))
+  }
+},[fetching])
+
+useEffect(() =>{
+window.addEventListener('scroll', () => scroll());
+
+return function () {
+  window.removeEventListener('scroll', () => scroll())
+}
+  
+},[])
+
+function scroll() {
+  if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight - 3) {
+    setFetching(true);
+  }
+} */
 
   return(
     <>
@@ -80,7 +107,7 @@ const res = onSearch(data, search);
       setSearch(e.target.value)
       }} className="inp" type="text" placeholder="Enter here" />
        {
-          res.map(({body, title, id})=>{
+         res.map(({body, title, id})=>{
             return(
               <Fragment key={id}>
                <div  className="love">
