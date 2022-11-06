@@ -1,0 +1,56 @@
+.delivery{
+  min-height: 1218px;
+  &__blockfaq{
+    display: grid;
+    grid-template-columns: 348px 775px;
+    grid-template-rows: minmax(850px, auto);
+    margin-top: 50px;
+    justify-content: center;
+  }
+  &__queask{
+    font-weight: 700;
+    font-size: 35px;
+    color: #000000;
+    margin-top: 54px;
+  }
+  
+  &__wrapalldescr{
+    width: 740px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__pluswrap{
+    position: relative;
+    width: 740px;
+    height: 40px;
+    margin-top: 65px;
+    span{
+      position: absolute;
+      color: red;
+      font-weight: 600;
+      font-size: 27px;
+      cursor: pointer;
+      top: -6px;
+      left: 750px;
+    }
+  }
+  &__titlequest{
+    font-weight: 600;
+    font-size: 18px;
+    color: #000000;
+  }
+  &__nomarg{
+    margin-top: 10px;
+  }
+  &__descrquest{
+    display: none;
+    font-weight: 400;
+    font-size: 16px;
+    color: #434242;
+    margin-top: 12px;
+  }
+  &__descrquest.activedescr{
+    display: block;
+  }
+}

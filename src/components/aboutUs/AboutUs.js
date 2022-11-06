@@ -50,7 +50,7 @@ return(
         </div>
       </div>
     </div>
-    <Love/>
+    {/* <Love/> */}
   </section>
 )
 }

@@ -11,6 +11,8 @@ const Barf = lazy(() => import('../barf/Barf'));
 const SetsZoov = lazy(() => import('../setsZoov/SetsZoov'));
 const RationsList = lazy(() => import('../rationsList/RationsList'))
 const AboutUs = lazy(() => import('../aboutUs/AboutUs'))
+const Faq = lazy(() => import ('../faq/Faq'));
+const Delivery = lazy(() => import('../delivery/Delivery'));
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
           <Route path='/sets' element={<SetsZoov/>}/>
           <Route path='/rations' element={<RationsList/>}/>
           <Route path='/about' element = {<AboutUs/>}/>
+          <Route path='/faq' element = {<Faq/>}/>
+          <Route path='/delivery' element = {<Delivery/>}/>
           </Routes>  
         </Router>
     </Suspense>

@@ -12,7 +12,8 @@ const [search, setSearch] = useState('');
 const [title, setTitle] = useState('');
 const [body, setBody] = useState('');
 const [fetching, setFetching] = useState(true);
-const [filter, setFilter] = useState('all')
+const [filter, setFilter] = useState('all');
+
 /* постраничная пагинация */
 
 const postData = async(limit = 10, page = 1) =>{
@@ -76,7 +77,7 @@ const onFilterChange = (data, filter) =>{
 }
 
 useEffect(() =>{
-getData()
+ getData()
 },[page])
 
 console.log('ger')
@@ -156,9 +157,6 @@ function scroll() {
           })
         }
           </div>
-        
-        
-
     </>
 
  )

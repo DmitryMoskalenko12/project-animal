@@ -27,14 +27,14 @@ return(
     </Link>
   </li>
   <li className="main-section__item">
-    <a href="#" className="main-section__link">
+    <Link to={'/faq'} className="main-section__link">
     Доставка
-    </a>
+    </Link>
   </li>
   <li className="main-section__item">
-    <a href="#" className="main-section__link">
+    <Link to={'/delivery'} className="main-section__link">
     FAQ
-    </a>
+    </Link>
   </li>
   <li className="main-section__item">
     <a href="#" className="main-section__link">
