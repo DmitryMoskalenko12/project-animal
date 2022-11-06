@@ -11,7 +11,7 @@ const ModalCount = (props) =>{
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
   const [area, setArea] = useState('');
-  const [check, setCheck] = useState('');
+  const [check, setCheck] = useState(false);
   const [showContent, setShowContent] = useState(true);
   const [error, setError] = useState(false);
 
@@ -28,7 +28,7 @@ const ModalCount = (props) =>{
       setName('');
       setNumber(''); 
       setArea(''); 
-      setCheck('');  
+      setCheck(false);  
       setTimeout(()=>{props.setModalCount(false)}, 2000)})
     .catch(() => setError(true), setTimeout(()=>{props.setModalCount(false)}, 2000)) 
   }
@@ -68,7 +68,7 @@ const content = (
       <textarea value={area} onChange={(e) => setArea(e.target.value)}  className='modalcount__area' type="text" placeholder='Если у вашего хвостика есть особенности
        здоровья – напишите об этом...' />
        <div className='modalcount__checkinpwrap'>
-        <input onChange={(e) => setCheck(e.target.value)}  id='dat' type="checkbox" className="modalcount__checkinp" />
+        <input onChange={(e) => setCheck(e.target.checked)} checked={check}  id='dat' type="checkbox" className="modalcount__checkinp" />
         <label htmlFor='dat' className="modalcount__check">
           Даю согласие на обработку персональных данных
        </label>

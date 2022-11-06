@@ -71,252 +71,87 @@
   ],
   "post": [
     {
-      "weight": "6",
-      "sizedog": "little",
-      "age": "5",
-      "type": "Дворняга",
-      "name": "Дмитрий",
-      "number": "0999786767",
-      "area": "уеркеркерен",
-      "check": "on",
+      "count": 3,
+      "name": "дмитрий",
+      "phone": "46576788989",
+      "addr": "аавирарнрн",
+      "weight": "300",
+      "check": "",
+      "finalPrice": 1200,
       "id": 1
     },
     {
       "count": 2,
-      "name": "Дмитрий",
-      "phone": "099999999",
-      "addr": "епкеркер",
-      "weight": "500",
-      "check": "on",
-      "price": "500 грн",
+      "name": "thtrhrhyth",
+      "phone": "5656676767",
+      "addr": "nnynyjunynj",
+      "weight": "700",
+      "check": true,
+      "finalPrice": 800,
       "id": 2
     },
     {
-      "count": 3,
-      "name": "",
-      "phone": "",
-      "addr": "",
-      "weight": "",
-      "check": "",
-      "price": "500 грн",
-      "id": 3
-    },
-    {
-      "count": 6,
-      "name": "thtrhrj",
-      "phone": "57767",
-      "addr": "676767",
-      "weight": "700",
-      "check": "on",
-      "price": "250 грн",
-      "id": 4
-    },
-    {
-      "count": 2,
-      "name": "Энакентий",
-      "phone": "0996674323",
-      "addr": "хз",
-      "weight": "500",
-      "check": "",
-      "price": "250 грн",
-      "id": 5
-    },
-    {
-      "count": 3,
-      "name": "grtghrth",
-      "phone": "565656",
-      "addr": "htrhth",
-      "weight": "500",
-      "check": "",
-      "price": "400 грн",
-      "id": 6
-    },
-    {
-      "count": 3,
-      "name": "rthrjj",
-      "phone": "576767",
-      "addr": "jtjyuju",
-      "weight": "300",
-      "check": "",
-      "price": "400 грн",
-      "id": 7
-    },
-    {
-      "count": 2,
-      "name": "rthyh",
-      "phone": "56576",
-      "addr": "76767",
-      "weight": "150",
-      "check": "",
-      "price": "400 грн",
-      "id": 8
-    },
-    {
-      "count": 3,
-      "name": "thryhty",
-      "phone": "567676",
-      "addr": "77667",
-      "weight": "500",
-      "check": "",
-      "price": "400 грн",
-      "id": 9
-    },
-    {
-      "count": 2,
-      "name": "y",
-      "phone": "6",
-      "addr": "6",
-      "weight": "500",
-      "check": "",
-      "price": "400 грн",
-      "id": 10
-    },
-    {
       "name": "Дмитрий",
-      "email": "dmtrmsklnk@gmail.com",
+      "email": "khomchenko18@gmail.com",
       "tel": "380996117693",
-      "checkbox": "on",
+      "checkbox": true,
       "set": "Набор L",
       "oldPrice": "3 983.",
       "newPrice": "2 770.",
-      "id": 11
+      "id": 3
     },
     {
-      "weight": "6",
-      "sizedog": "little",
-      "age": "6",
-      "type": "6",
-      "name": "6",
-      "number": "6",
-      "area": "",
-      "check": "on",
-      "id": 12
+      "weight": "2",
+      "sizedog": "big",
+      "age": "3",
+      "type": "gtrgrt",
+      "name": "trgtgrtg",
+      "number": "565655",
+      "area": "gtrgth",
+      "check": true,
+      "id": 4
     },
     {
       "name": "Дмитрий",
       "email": "dmtrmsklnk@gmail.com",
-      "area": "thrthrtjhtyrjtyjtyjy",
-      "check": "",
-      "id": 13
+      "area": "hrjytjtj",
+      "check": true,
+      "id": 5
+    },
+    {
+      "name": "Дмитрий",
+      "email": "dmtrmsklnk@gmail.com",
+      "area": "thrthrty",
+      "check": true,
+      "id": 6
+    },
+    {
+      "name": "Дмитрий",
+      "email": "dmtrmsklnk@gmail.com",
+      "area": "rthrhtyh",
+      "check": true,
+      "id": 7
+    },
+    {
+      "name": "Дмитрий",
+      "email": "dmtrmsklnk@gmail.com",
+      "area": "gkhhhb",
+      "check": true,
+      "id": 8
+    },
+    {
+      "name": "Дмитрий",
+      "email": "dima.oksagen12@gmail.com",
+      "area": "",
+      "check": true,
+      "id": 9
     },
     {
       "name": "ssrgergh",
       "email": "dmtrmsklnk@gmail.com",
-      "area": "ergtehrthrt",
-      "check": true,
-      "id": 14
-    },
-    {
-      "name": "ssrgergh",
-      "email": "dmtrmsklnk@gmail.com",
-      "area": "rthrty",
-      "check": true,
-      "id": 15
-    },
-    {
-      "name": "Дмитрий",
-      "email": "dmtrmsklnk@gmail.com",
-      "area": "dhthrhtrthrth",
-      "check": true,
-      "id": 16
-    },
-    {
-      "name": "Дмитрий",
-      "email": "dmtrmsklnk@gmail.com",
       "area": "",
       "check": true,
-      "id": 17
-    },
-    {
-      "name": "Дмитрий",
-      "email": "dima.oksagen12@gmail.com",
-      "area": "",
-      "check": null,
-      "id": 18
-    },
-    {
-      "name": "Дмитрий",
-      "email": "dima.oksagen12@gmail.com",
-      "area": "dghfthfhh",
-      "check": true,
-      "id": 19
-    },
-    {
-      "name": "ssrgergh",
-      "email": "dmtrmsklnk@gmail.com",
-      "area": "rgdhftgh",
-      "check": true,
-      "id": 20
-    },
-    {
-      "name": "Дмитрий",
-      "email": "dmtrmsklnk@gmail.com",
-      "area": "xfxbdfb",
-      "check": true,
-      "id": 21
-    },
-    {
-      "name": "Дмитрий",
-      "email": "dmtrmsklnk@gmail.com",
-      "area": "",
-      "check": true,
-      "id": 22
-    },
-    {
-      "name": "Дмитрий",
-      "email": "dmtrmsklnk@gmail.com",
-      "area": "drtdhgrth",
-      "check": true,
-      "id": 23
-    },
-    {
-      "name": "Дмитрий",
-      "email": "dima.oksagen12@gmail.com",
-      "area": "thtrhth",
-      "check": true,
-      "id": 24
-    },
-    {
-      "name": "Дмитрий",
-      "email": "dmtrmsklnk@gmail.com",
-      "area": "dthrtht",
-      "check": false,
-      "id": 25
-    },
-    {
-      "name": "Дмитрий",
-      "email": "dmtrmsklnk@gmail.com",
-      "area": "",
-      "check": "",
-      "id": 26
-    },
-    {
-      "name": "Дмитрий",
-      "email": "dima.oksagen12@gmail.com",
-      "area": "",
-      "check": true,
-      "id": 27
-    },
-    {
-      "name": "Дмитрий",
-      "email": "dmtrmsklnk@gmail.com",
-      "area": "yuyuyg",
-      "check": true,
-      "id": 28
-    },
-    {
-      "name": "Дмитрий",
-      "email": "dmtrmsklnk@gmail.com",
-      "area": "rhtdthrth",
-      "check": true,
-      "id": 29
-    },
-    {
-      "name": "Дмитрий",
-      "email": "dima.oksagen12@gmail.com",
-      "area": "ttjtyjytj",
-      "check": true,
-      "id": 30
+      "id": 10
     }
   ]
 }

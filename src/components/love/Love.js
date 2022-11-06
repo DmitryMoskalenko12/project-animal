@@ -114,21 +114,26 @@ function scroll() {
  */
   return(
     <>
+    {/* создание нового персонажа */}
     <form onSubmit={(e) => {e.preventDefault(); setItem()}} className="form">
       <input onChange={(e) => setTitle(e.target.value)} value={title} className="name" placeholder="Title" name='name'  required type="text" />
       <input onChange={(e) => setBody(e.target.value)} type ='text' value={body} className="tel" placeholder="Body" name='tel' required/>
       <button className="but">Click</button>
     </form>
 
+    {/* кнопки фильтров */}
     <div className="btnswrap">
       <button onClick={(e)=> setFilter(e.target.textContent)} className="but1">dolorem dolore est ipsam</button>
       <button onClick={(e)=> setFilter(e.target.textContent)} className="but1">qui est esse</button>
       <button onClick={(e)=> setFilter(e.target.textContent)} className="but1">all</button>
     </div>
 
+     {/* поисковой инпут */}
     <input onChange={(e) => {
       setSearch(e.target.value)
       }} className="inp" type="text" placeholder="Enter here" />
+
+     {/*посты */}
        {
          res.map(({body, title, id})=>{
             return(
@@ -145,7 +150,7 @@ function scroll() {
          })
         }
 
-         
+         {/* формирование кнопок */}
           <div className="box">
           {    
           result.map(i =>{

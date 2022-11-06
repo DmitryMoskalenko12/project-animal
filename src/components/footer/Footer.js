@@ -46,7 +46,7 @@ const postData =  () =>{
             по телефону или в мессенджерах</div>
             <div className="footer__tel">38(099)6547145</div>
 
-            <a href="" className="footer__social">
+            <a href="#" className="footer__social">
               <div className="footer__whats">
                 <img src={whats} alt="whats" />
               </div>

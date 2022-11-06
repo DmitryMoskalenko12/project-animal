@@ -7,7 +7,7 @@ const Modal = (props) => {
 const [name, setName] = useState('');
 const [email, setEmail] = useState('');
 const [tel, setTel] = useState('');
-const [check, setCheck] = useState(null);
+const [check, setCheck] = useState(false);
 const [akkordion1, setAkkordion1] = useState(false);
 const [akkordion2, setAkkordion2] = useState(false);
 const [showModal, setShowModal] = useState(true);
@@ -71,7 +71,7 @@ const content = (
             <input value={email} onChange={(e) => setEmail(e.target.value)} className='modal__email' type="email" name='email' required placeholder='Email'/>
 
             <div className="modal__checkboxwrap">
-            <input onChange={(e)=> setCheck(e.target.value)} type="checkbox" required name="checkbox" id='modal__checkbox'/>
+            <input onChange={(e)=> setCheck(e.target.checked)} checked={check} type="checkbox" required name="checkbox" id='modal__checkbox'/>
             <label htmlFor='modal__checkbox' className="modal__checkdescr">
             Даю согласие на обработку персональных данных
             </label>
