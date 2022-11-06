@@ -7,8 +7,33 @@ import dog from '../../image/fotdog.png';
 import apple from '../../image/fotapple.png';
 import up from '../../image/up.png';
 import left from '../../image/left.png';
+import succes from '../../image/success.png';
+import erro from '../../image/error.png';
+
+import { useState } from 'react';
+import { useHttp } from '../../hooks/http.hook';
 
 const Footer = () =>{
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [area, setArea] = useState('');
+  const [check, setCheck] = useState(false);
+  const [err, setErr] = useState(false);
+  const [success, setSuccess] = useState(false);
+
+  const {request} = useHttp();
+
+const postData =  () =>{
+  const data = {
+    name,
+    email,
+    area,
+    check
+  }
+   request('http://localhost:3001/post', 'POST', JSON.stringify(data))
+  .then(() => setName(''), setEmail(''), setArea(''), setCheck(false), setSuccess(true), setTimeout(() => {setSuccess(false)}, 2000))
+  .catch(() => /* setName(''), setEmail(''), setArea(''), setCheck(false), */ setErr(true), setTimeout(() => {setErr(false)}, 2000))
+}
   return(
     <footer className="footer">
       <Link end to='/' className="back">Back</Link>
@@ -43,17 +68,17 @@ const Footer = () =>{
         <div className="footer__form">
          <div className="footer__formquest"> <span>Остались вопросы?</span><br />Напишите нам и мы обязательно подробно на них ответим.</div>
 
-         <form className="footer__formsubmit">
-          <input required placeholder='Name' type="text" className="footer__inpname" name='name' />
-          <input required placeholder='Emeil' type="email" className="footer__inpemail" name='email' />
-          <textarea name="textarea" placeholder='Your question...' className="footer__textarea"></textarea>
+         <form onSubmit={(e) =>{ e.preventDefault(); postData()}} className="footer__formsubmit">
+          <input onChange={(e) => setName(e.target.value)} value={name} required placeholder='Name' type="text" className="footer__inpname" name='name' />
+          <input onChange={(e) => setEmail(e.target.value)} value={email} required placeholder='Emeil' type="email" className="footer__inpemail" name='email' />
+          <textarea onChange={(e) => setArea(e.target.value)} value={area} name="textarea" placeholder='Your question...' className="footer__textarea"></textarea>
 
           <div className="footer__wrapcheck">
-            <input id='formcheck' type="checkbox" className="footer__checkbox" name='checkbox' />
+            <input onChange={(e) => setCheck(e.target.checked)} checked ={check} id='formcheck' type="checkbox" className="footer__checkbox" name='checkbox' />
             <label htmlFor='formcheck' className="footer__checktex">Даю согласие на обработку
               персональных данных</label>
           </div>
-          <div className="footer__butsub">Отправить</div>
+          <button className="footer__butsub">Отправить</button>
          </form>
 
         </div>
@@ -81,6 +106,16 @@ const Footer = () =>{
         <div className="footer__left">
           <img src={left} alt="left" />
         </div>
+{
+err ? <div className="footer__error">
+<img src={erro} alt="error" />
+<span>Ошибка</span>
+</div> : success ? <div className="footer__success">
+<img src={succes} alt="success" />
+<span>Успешно</span>
+</div> :  null
+}
+       
     </footer>
   )
 }
