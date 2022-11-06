@@ -1,0 +1,199 @@
+.footer{
+  position: relative;
+  min-height: 606px;
+  padding-top: 80px;
+  background: #961914;
+  &__bigwrap{
+    display: grid;
+    grid-template-columns: 302px 636px;
+    grid-template-rows: minmax(370px, auto);
+    grid-auto-rows: minmax(370px, auto);
+    justify-content: center;
+    column-gap: 187px;
+  }
+  &__form{
+    padding-top: 25px;
+  }
+  &__contacts{
+    font-weight: 700;
+    font-size: 46px;
+    color: #FFFFFF;
+  }
+  &__descr{
+    font-weight: 400;
+    font-size: 16px;
+    color: #FFFFFF;
+    margin-top: 8px;
+  }
+  &__tel{
+    font-weight: 700;
+    font-size: 16px;
+    color: #FFFFFF;
+    margin-top: 32px;
+  }
+  &__social{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 223px;
+    height: 40px;
+    background:rgba(256,256,256, 0.2);
+    border-radius: 8px;
+    margin-top: 16px;
+    text-decoration: none;
+  }
+  &__whats, &__teleg{
+    width: 18px;
+    height: 18px;
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__socialtext{
+    font-weight: 500;
+    font-size: 14px;
+    color: #FFFFFF;
+  }
+  &__subscr{
+    font-weight: 400;
+    font-size: 16px;
+    color: #FFFFFF;
+    margin-top: 40px;
+  }
+  &__formquest{
+    font-weight: 400;
+    font-size: 16px;
+    color: #FFFFFF;
+    margin-bottom: 34px;
+    span{
+      font-weight: 600;
+      font-size: 20px;
+      color: #FFFFFF;
+    }
+  }
+  &__formsubmit{
+    display: grid;
+    grid-template-columns: repeat(2, 306px);
+    grid-template-rows: 48px 122px 48px;
+    grid-auto-rows: minmax(48px, auto);
+    column-gap: 24px;
+    row-gap: 16px;
+  }
+  &__inpname, &__inpemail{
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    padding: 14px 14px 14px 14px;
+  }
+  &__textarea{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    padding: 8px 0 0 15px;
+    resize: none;
+  }
+  &__wrapcheck{
+    width: 253px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__checktex{
+    font-weight: 400;
+    font-size: 12px;
+    color: #FFFFFF;
+    margin-left: 8px;
+  }
+  &__butsub{
+    width: 214px;
+    height: 48px;
+    background: #FFF4F3;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #EC7973;
+    padding: 13px 55px 13px 55px;
+    justify-self: end;
+    cursor: pointer;
+  }
+  &__subfooter{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+      height: 76px;
+      background: #69120E;
+      margin-top: 66px;
+
+  }
+  &__subdesc,&__oferta,&__politconf{
+    a{
+      font-weight: 400;
+      font-size: 12px;
+      color: #FFFFFF;
+      opacity: 0.4;
+      text-decoration: none;
+    } 
+  }
+  &__meat{
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    left: 450px;
+    top: 270px;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__apple{
+    position: absolute;
+    width: 104px;
+    height: 104px;
+    right: 0px;
+    top: 420px;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__dog{
+    position: absolute;
+    width: 104px;
+    height: 104px;
+    left: 470px;
+    top: 110px;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__up{
+    position: absolute;
+    width: 195px;
+    height: 260px;
+    top: 0;
+    right: 0;
+    img{
+    width: 100%;
+    height: 100%;
+    }
+  }
+  &__left{
+    position: absolute;
+    width: 195px;
+    height: 500px;
+    top: 100px;
+    left: 0;
+    img{
+    width: 100%;
+    height: 100%;
+    }
+  }
+}

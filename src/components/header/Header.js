@@ -37,9 +37,9 @@ return(
     </Link>
   </li>
   <li className="main-section__item">
-    <a href="#" className="main-section__link">
+    <Link to={'/footer'} className="main-section__link">
     Контакты
-    </a>
+    </Link>
   </li>
   </ul>
 </nav>
