@@ -142,6 +142,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    input {
+      display: none;
+    }
   }
 
 #modal__checkbox {
