@@ -1,7 +1,7 @@
 import './modal.scss';
-import { useHttp } from '../../hooks/http.hook';
 import { useState } from 'react';
 import ThanksModal from '../thanksModal/ThanksModal';
+import { post } from '../../dummy-post/dummy-post';
 
 const Modal = (props) => {
 const [name, setName] = useState('');
@@ -13,8 +13,6 @@ const [akkordion2, setAkkordion2] = useState(false);
 const [showModal, setShowModal] = useState(true);
 const [error, setError] = useState(false);
 
-const {request} = useHttp();
-
 const set = props.data[props.butId - 1].set,
       oldPrice = props.data[props.butId - 1].oldprice,
       newPrice = props.data[props.butId - 1].newprice;
@@ -22,7 +20,7 @@ const set = props.data[props.butId - 1].set,
 const postData = () =>{
 
   const formData = {name: name, email: email, tel: tel, checkbox: check, set, oldPrice, newPrice}
-  request('http://localhost:3001/post', 'POST', JSON.stringify(formData))
+  post(formData)
   .then(() => setName(''), setEmail(''), setTel(''), setCheck(false), setTimeout(()=>{props.setModal(false)}, 2000))
   .catch(()=> setError(true))
 }
@@ -91,7 +89,7 @@ const content = (
   </div>
 )
 return(
-  <div onClick={() => props.setModal(false)} /* style={{display: props.modal ? 'block': 'none'}} */ className={props.modal ? 'modal active' : 'modal' }>
+  <div onClick={() => props.setModal(false)} className={props.modal ? 'modal active' : 'modal' }>
     <div onClick={(e) => e.stopPropagation()} className= "modal__content">
 
       <div onClick={() => props.setModal(false)} className="modal__close">&times;</div>

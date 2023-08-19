@@ -3,13 +3,10 @@ import heart from '../../image/Heartbeat.png';
 import paw from '../../image/PawPrint.png';
 import smiley from '../../image/Smiley.png';
 import './aboutUs.scss';
-import { Link } from 'react-router-dom';
-import Love from '../love/Love';
 
 const AboutUs = () =>{
 return(
-  <section className="why">
-    <Link end to='/' className="back back__why">Back</Link>
+  <section id='about' className="why">
     <div className="container">
       <h1 className="why__title">Почему ZOOOV</h1>
       <div className="why__wrapper">
@@ -50,7 +47,6 @@ return(
         </div>
       </div>
     </div>
-    {/* <Love/> */}
   </section>
 )
 }

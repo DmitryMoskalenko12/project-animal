@@ -31,11 +31,11 @@ const content = (
   </div>
 )
   return(
-    <div onClick={() => props.setModal(false)} /* style={{display: props.modal ? 'block': 'none'}} */ className={props.modal ? 'modalrations active' : 'modalrations' }>
+    <div onClick={() => props.setModal(false)} className={props.modal ? 'modalrations active' : 'modalrations' }>
     <div onClick={(e) => e.stopPropagation()} className= "modalrations__content">
 
      {
-   /*  error ? <div style={{textAlign: 'center',fontSize: '20px', marginTop: '80px', color: 'red'}}>Произошла ошибка</div>: showModal ? content : <ThanksModal/> */ formModal ? <ModalRationForm setModal = {props.setModal} setFormModal = {setFormModal} data = {props.data} id = {props.butid}/> : content
+    formModal ? <ModalRationForm setModal = {props.setModal} setFormModal = {setFormModal} data = {props.data} id = {props.butid}/> : content
      }
 
     </div>

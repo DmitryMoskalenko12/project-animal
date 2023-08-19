@@ -1,6 +1,6 @@
 import './modalRationForm.scss';
 import { useState,useMemo } from 'react';
-import { useHttp } from '../../hooks/http.hook';
+import { post } from '../../dummy-post/dummy-post';
 import ThanksModal from '../thanksModal/ThanksModal';
 
 const ModalRationForm = (props) =>{
@@ -10,16 +10,15 @@ const ModalRationForm = (props) =>{
   const [addr, setAddr] = useState('');
   const [weight, setWeight] = useState('');
   const [check, setCheck] = useState(false);
-
   const [error, setError] = useState(false);
   const [showContent, setShowContent] = useState(true);
   const [finalPrice, setFinalPrice] = useState(0);
-  const {request} = useHttp();
+  
   useMemo(()=> setFinalPrice(+props.data[props.id - 1].price.replace(/\D/ig, '') * count),[count])
 
-  const postData = () =>{
+  const postData = () => {
    const formData = {count, name, phone, addr, weight, check, finalPrice};
-   request('http://localhost:3001/post', 'POST', JSON.stringify(formData))
+   post(formData)
    .then(() => {
      setCount(0); 
      setName('');
@@ -75,7 +74,7 @@ const ModalRationForm = (props) =>{
         </div>
 
         <div className="modalrationform__butprice">
-        <div className="modalrationform__price">{/* props.data[props.id - 1].price */ finalPrice} грн</div>
+        <div className="modalrationform__price">{ finalPrice} грн</div>
         <button className="modalrationform__butform">Оформить заказ</button>
         </div>
 

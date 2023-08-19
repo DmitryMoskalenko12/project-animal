@@ -1,6 +1,5 @@
-import dog from '../../image/dog.png';
+import dog from '../../image/dog.webp';
 import './barf.scss';
-import { Link } from 'react-router-dom';
 import meat from '../../image/meat.png';
 import bounce from '../../image/bounce.png';
 import v from '../../image/v.png';
@@ -12,8 +11,7 @@ import fr from '../../image/fr.png';
 const Barf = () => {
   
 return(
-  <section className="barf">
-    <Link end to='/' className="back">Back</Link>
+  <section id='barf' className="barf">
     <div className="container">
       <div className="barf__wrap">
       <div className="barf__descr">

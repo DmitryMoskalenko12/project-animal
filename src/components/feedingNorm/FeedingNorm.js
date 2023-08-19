@@ -1,6 +1,6 @@
 import './feedingNorm.scss';
 
-const FeedingNorm = ()=>{
+const FeedingNorm = () => {
 
 return(
   <div className="feeding">

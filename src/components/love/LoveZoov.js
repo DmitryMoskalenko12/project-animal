@@ -1,8 +1,8 @@
 import './loveZoov.scss';
-import lan from '../../image/lan.png';
-import smile from '../../image/smile.png';
-import heartred from '../../image/heartred.png';
-import dogface from '../../image/dogface.png';
+import lan from '../../image/lan.webp';
+import smile from '../../image/smile.webp';
+import heartred from '../../image/heartred.webp';
+import dogface from '../../image/dogface.webp';
 
 const LoveZoov = () =>{
   return(

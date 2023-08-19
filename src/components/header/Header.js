@@ -1,45 +1,45 @@
 import logo from '../../image/logo.png';
-import { Link } from 'react-router-dom';
+
 const Header = () => {
 
 return(
 <nav className='main-section__nav'>
-  <a className='main-section__logo' href="#"><img src={logo} alt="logo" /></a>
+  <a className='main-section__logo' href="#main"><img src={logo} alt="logo" /></a>
   <ul className="main-section__menu">
   <li className="main-section__item">
-    <Link to='/barf' className="main-section__link">
+    <a href='#barf' className="main-section__link">
     BARF
-    </Link>
+    </a>
   </li>
   <li className="main-section__item">
-    <Link to={'/rations'} className="main-section__link">
+    <a href={'#rations'} className="main-section__link">
     Рационы
-    </Link>
+    </a>
   </li>
   <li className="main-section__item">
-    <Link to='/sets' className="main-section__link">
+    <a href='#sets' className="main-section__link">
     наборы ZOOOV
-    </Link>
+    </a>
   </li>
   <li className="main-section__item">
-    <Link to={'/about'} className="main-section__link">
+    <a href={'#about'} className="main-section__link">
     О нас
-    </Link>
+    </a>
   </li>
   <li className="main-section__item">
-    <Link to={'/faq'} className="main-section__link">
+    <a href={'#faq'} className="main-section__link">
     Доставка
-    </Link>
+    </a>
   </li>
   <li className="main-section__item">
-    <Link to={'/delivery'} className="main-section__link">
+    <a href={'#delivery'} className="main-section__link">
     FAQ
-    </Link>
+    </a>
   </li>
   <li className="main-section__item">
-    <Link to={'/footer'} className="main-section__link">
+    <a href={'#footer'} className="main-section__link">
     Контакты
-    </Link>
+    </a>
   </li>
   </ul>
 </nav>

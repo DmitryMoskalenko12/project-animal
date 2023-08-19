@@ -1,7 +1,7 @@
 import './modalCount.scss';
 import { useState } from 'react';
-import { useHttp } from '../../hooks/http.hook';
 import ThanksModal from '../thanksModal/ThanksModal';
+import { post } from '../../dummy-post/dummy-post';
 
 const ModalCount = (props) =>{
   const [weight, setWeight] = useState('');
@@ -14,12 +14,10 @@ const ModalCount = (props) =>{
   const [check, setCheck] = useState(false);
   const [showContent, setShowContent] = useState(true);
   const [error, setError] = useState(false);
-
-  const {request} = useHttp();
   
   const postData = () =>{
     const res = {weight, sizedog, age, type, name, number, area, check } 
-     request('http://localhost:3001/post', 'POST', JSON.stringify(res))
+     post(res)
     .then(() => {
       setAge(''); 
       setSizeDog('');

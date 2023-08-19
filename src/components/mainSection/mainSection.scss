@@ -1,8 +1,8 @@
 .main-section{
-  min-height: 800px;
-  padding-top: 45px;
-  padding-bottom: 225px;
-  background: url('../../image/mainbg.png') center center/cover no-repeat;
+  min-height: 100vh;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: url('../../image/mainbg.webp') center center/cover no-repeat;
   &__nav{
     min-height: 80px;
     display: flex;
@@ -36,7 +36,6 @@
   }
   &__wrapper{
     width: 490px;
-    height: 210px;
   }
   &__title{
     font-weight: 700;
@@ -44,7 +43,7 @@
     line-height: 130%;
     letter-spacing: 0.02em;
     color: #FFFFFF;
-    margin-top: 128px;
+    margin-top: 95px;
     span{
       color: #EC7973;
     }

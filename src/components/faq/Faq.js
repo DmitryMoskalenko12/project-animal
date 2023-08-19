@@ -3,13 +3,11 @@ import pack from '../../image/Package.png';
 import phone from '../../image/PhoneCall.png';
 import clock from '../../image/Clock.png';
 import vector from '../../image/Vector.png';
-import { Link } from 'react-router-dom';
 
 const Faq = () =>{
  
   return(
-    <section className='faq'>
-     <Link end to='/' className="back back__why">Back</Link>
+    <section id='faq' className='faq'>
       <div className="container">
         <div className="faq__title">Как получить ZOOOV?</div>
         <div className="faq__wrap">

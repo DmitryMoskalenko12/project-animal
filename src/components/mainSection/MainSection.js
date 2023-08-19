@@ -2,7 +2,7 @@ import './mainSection.scss';
 import Header from '../header/Header';
 const MainSection = () => {
   return(
-    <section className='main-section'>
+    <section id='main' className='main-section'>
       <div className="container">
       <Header/>
      <div className="main-section__wrapper">

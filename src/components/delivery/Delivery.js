@@ -1,6 +1,5 @@
 import './delivery.scss';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 const Delivery = () =>{
   const[data, setData] = useState([
@@ -69,7 +68,6 @@ const Delivery = () =>{
     }
 ])
 const [plus, setPlus] = useState(false);
-/* const [ids, setId] = useState('') */
 
 const toogle = index => {
   if (plus === index) {
@@ -78,8 +76,7 @@ const toogle = index => {
   setPlus(index)
 }
   return (
-    <section className="delivery">
-      <Link end to='/' className="back back__why">Back</Link>
+    <section id='delivery' className="delivery">
       <div className="container">
       <div className="delivery__blockfaq">
         <div className="delivery__queask">Частые вопросы</div>
@@ -92,7 +89,7 @@ const toogle = index => {
                   <div className="delivery__wrapfaqdescr">
                     <div className="delivery__pluswrap">
 
-                    <div className="delivery__titlequest">{title}</div>
+                    <button onClick={() => toogle(id)} className="delivery__titlequest">{title}</button>
                     <span /* data-num={id} */ onClick={(/* e */) => {
                      toogle(id)
                       /* setId(e.currentTarget.getAttribute('data-num')); 

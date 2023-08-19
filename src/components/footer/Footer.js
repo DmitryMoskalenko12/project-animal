@@ -1,17 +1,16 @@
 import './footer.scss';
 import whats from '../../image/WhatsappLogo.png';
 import teleg from '../../image/TelegramLogo.png';
-import { Link } from 'react-router-dom';
-import meat from '../../image/fotmeat.png';
+
+import meat from '../../image/fotmeat.webp';
 import dog from '../../image/fotdog.png';
 import apple from '../../image/fotapple.png';
 import up from '../../image/up.png';
 import left from '../../image/left.png';
 import succes from '../../image/success.png';
 import erro from '../../image/error.png';
-
+import { post } from '../../dummy-post/dummy-post';
 import { useState } from 'react';
-import { useHttp } from '../../hooks/http.hook';
 
 const Footer = () =>{
   const [name, setName] = useState('');
@@ -21,8 +20,6 @@ const Footer = () =>{
   const [err, setErr] = useState(false);
   const [success, setSuccess] = useState(false);
 
-  const {request} = useHttp();
-
 const postData =  () =>{
   const data = {
     name,
@@ -30,13 +27,13 @@ const postData =  () =>{
     area,
     check
   }
-   request('http://localhost:3001/post', 'POST', JSON.stringify(data))
+   post(data)
   .then(() => setName(''), setEmail(''), setArea(''), setCheck(false), setSuccess(true), setTimeout(() => {setSuccess(false)}, 2000))
-  .catch(() => /* setName(''), setEmail(''), setArea(''), setCheck(false), */ setErr(true), setTimeout(() => {setErr(false)}, 2000))
+  .catch(() => setErr(true), setTimeout(() => {setErr(false)}, 2000))
 }
   return(
-    <footer className="footer">
-      <Link end to='/' className="back">Back</Link>
+    <footer id='footer' className="footer">
+     
       <div className="container">
         <div className="footer__bigwrap">
 
@@ -106,16 +103,16 @@ const postData =  () =>{
         <div className="footer__left">
           <img src={left} alt="left" />
         </div>
-{
-err ? <div className="footer__error">
-<img src={erro} alt="error" />
-<span>Ошибка</span>
-</div> : success ? <div className="footer__success">
-<img src={succes} alt="success" />
-<span>Успешно</span>
-</div> :  null
-}
-       
+        {
+        err ? <div className="footer__error">
+        <img src={erro} alt="error" />
+        <span>Ошибка</span>
+        </div> : success ? <div className="footer__success">
+        <img src={succes} alt="success" />
+        <span>Успешно</span>
+        </div> :  null
+        }
+              
     </footer>
   )
 }

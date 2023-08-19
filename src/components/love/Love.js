@@ -1,4 +1,4 @@
-import { useState, useEffect, Fragment, useMemo } from "react";
+import { useState, useEffect, Fragment} from "react";
 import './love.scss';
 import axios from "axios";
 
@@ -11,7 +11,6 @@ const [totalCount, setTotalCount] = useState(0);
 const [search, setSearch] = useState('');
 const [title, setTitle] = useState('');
 const [body, setBody] = useState('');
-const [fetching, setFetching] = useState(true);
 const [filter, setFilter] = useState('all');
 
 /* постраничная пагинация */
@@ -83,57 +82,26 @@ useEffect(() =>{
 console.log('ger')
 const res = onFilterChange(onSearch(data, search), filter); 
 
-
-/* лента водопад */
-
-/* useEffect( () => {
-  if (fetching) {
-    axios.get(`https://jsonplaceholder.typicode.com/posts?_limit=10&_page=${page}`)
-    .then(res => {
-      setData([...data, ...res.data])
-      setPage( page => page + 1)
-    })
-    .finally(() => setFetching(false))
-  }
-},[fetching])
-
-useEffect(() =>{
-window.addEventListener('scroll', () => scroll());
-
-return function () {
-  window.removeEventListener('scroll', () => scroll())
-}
-  
-},[])
-
-function scroll() {
-  if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight - 3) {
-    setFetching(true);
-  }
-}
- */
   return(
     <>
-    {/* создание нового персонажа */}
+   
     <form onSubmit={(e) => {e.preventDefault(); setItem()}} className="form">
       <input onChange={(e) => setTitle(e.target.value)} value={title} className="name" placeholder="Title" name='name'  required type="text" />
       <input onChange={(e) => setBody(e.target.value)} type ='text' value={body} className="tel" placeholder="Body" name='tel' required/>
       <button className="but">Click</button>
     </form>
 
-    {/* кнопки фильтров */}
     <div className="btnswrap">
       <button onClick={(e)=> setFilter(e.target.textContent)} className="but1">dolorem dolore est ipsam</button>
       <button onClick={(e)=> setFilter(e.target.textContent)} className="but1">qui est esse</button>
       <button onClick={(e)=> setFilter(e.target.textContent)} className="but1">all</button>
     </div>
 
-     {/* поисковой инпут */}
+ 
     <input onChange={(e) => {
       setSearch(e.target.value)
       }} className="inp" type="text" placeholder="Enter here" />
 
-     {/*посты */}
        {
          res.map(({body, title, id})=>{
             return(
@@ -150,7 +118,6 @@ function scroll() {
          })
         }
 
-         {/* формирование кнопок */}
           <div className="box">
           {    
           result.map(i =>{
